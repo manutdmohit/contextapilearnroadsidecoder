@@ -5,6 +5,8 @@ import SingleProduct from './SingleProduct';
 const CartPage = () => {
   const { cart } = useContext(Cart);
 
+  const [total, setTotal] = useState();
+
   useEffect(() => {
     setTotal(cart.reduce((acc, curr) => acc + Number(curr.price), 0));
   }, [cart]);
